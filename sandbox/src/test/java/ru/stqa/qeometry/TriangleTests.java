@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.stqa.geometry.figure.Triangle;
 
+import javax.swing.*;
+
 public class TriangleTests {
 
     @Test
@@ -36,7 +38,14 @@ public class TriangleTests {
             new Triangle(10.0, 1.0, 3.0);
             Assertions.fail();
         } catch (IllegalArgumentException exception) {
-
         }
+    }
+
+    @Test
+    void testEqualityTriangles(){
+        var t1 = new Triangle(4.0, 3.0, 2.0);
+        var t2 = new Triangle(3.0, 2.0, 4.0);
+
+        Assertions.assertTrue(t1.equals(t2));
     }
 }
