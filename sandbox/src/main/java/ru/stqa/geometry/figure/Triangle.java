@@ -24,7 +24,8 @@ public record Triangle (double s1, double s2, double s3)  {
             return false;
 
         Triangle triangle = (Triangle) obj;
-        if ((Double.compare(triangle.s1, this.s2) == 0 && Double.compare(triangle.s2, this.s3) == 0 && Double.compare(triangle.s3, this.s1) == 0)
+        if ((Double.compare(triangle.s1, this.s1) == 0 && Double.compare(triangle.s2, this.s2) == 0 && Double.compare(triangle.s3, this.s3) == 0)
+             ||   (Double.compare(triangle.s1, this.s2) == 0 && Double.compare(triangle.s2, this.s3) == 0 && Double.compare(triangle.s3, this.s1) == 0)
             || (Double.compare(triangle.s1, this.s3) == 0 && Double.compare(triangle.s2, this.s1) == 0 && Double.compare(triangle.s3, this.s2) == 0)
                 || (Double.compare(triangle.s1, this.s1) == 0 && Double.compare(triangle.s2, this.s3) == 0 && Double.compare(triangle.s3, this.s2) == 0)
                 || (Double.compare(triangle.s2, this.s2) == 0 && Double.compare(triangle.s1, this.s3) == 0 && Double.compare(triangle.s3, this.s1) == 0)
