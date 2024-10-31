@@ -1,3 +1,4 @@
+import model.ContactData;
 import model.GroupData;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.*;
@@ -40,9 +41,54 @@ public class TestBase {
         driver.findElement(By.linkText("group page")).click();
     }
 
+    protected void createContact(ContactData contact) {
+        driver.findElement(By.name("new")).click();
+        driver.findElement(By.name("firstname")).click();
+        driver.findElement(By.name("firstname")).sendKeys(contact.FirstName());
+        driver.findElement(By.name("middlename")).click();
+        driver.findElement(By.name("middlename")).sendKeys(contact.MiddleName());
+        driver.findElement(By.name("lastname")).click();
+        driver.findElement(By.name("lastname")).sendKeys(contact.LastName());
+        driver.findElement(By.name("nickname")).click();
+        driver.findElement(By.name("nickname")).sendKeys(contact.Nickname());
+        driver.findElement(By.name("title")).click();
+        driver.findElement(By.name("title")).sendKeys(contact.Title());
+        driver.findElement(By.name("company")).click();
+        driver.findElement(By.name("company")).sendKeys(contact.Company());
+        driver.findElement(By.name("address")).click();
+        driver.findElement(By.name("address")).sendKeys(contact.Address());
+        driver.findElement(By.name("home")).click();
+        driver.findElement(By.name("home")).sendKeys(contact.TelephoneHome());
+        driver.findElement(By.name("mobile")).click();
+        driver.findElement(By.name("mobile")).sendKeys(contact.TelephoneMobile());
+        driver.findElement(By.name("work")).click();
+        driver.findElement(By.name("work")).sendKeys(contact.TelephoneWork());
+        driver.findElement(By.name("fax")).click();
+        driver.findElement(By.name("fax")).sendKeys(contact.TelephoneFax());
+        driver.findElement(By.name("email")).click();
+        driver.findElement(By.name("email")).sendKeys(contact.Email());
+        driver.findElement(By.name("email2")).click();
+        driver.findElement(By.name("email2")).sendKeys(contact.Email2());
+        driver.findElement(By.name("email3")).click();
+        driver.findElement(By.name("email3")).sendKeys(contact.Email3());
+        driver.findElement(By.name("homepage")).click();
+        driver.findElement(By.name("homepage")).sendKeys(contact.Homepage());
+        driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
+        driver.findElement(By.linkText("home page")).click();
+    }
+
+    // Остановилась тут!!!
+
+
     protected void openGroupPage() {
         if (!isElementPresent(By.name("new"))) {
             driver.findElement(By.linkText("groups")).click();
+        }
+    }
+
+    protected void openContactPage() {
+        if (!isElementPresent(By.name("new"))) {
+            driver.findElement(By.linkText("add new")).click();
         }
     }
 
