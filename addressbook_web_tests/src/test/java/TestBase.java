@@ -96,6 +96,10 @@ public class TestBase {
         return !isElementPresent(By.name("selected[]"));
     }
 
+    protected boolean isGroupPresent() {
+        return !isElementPresent(By.name("selected[]"));
+    }
+
     protected void removeGroup() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();

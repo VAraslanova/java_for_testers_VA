@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
         @Test
         public void canCreateContact() {
             openContactPage();
-            createContact(new ContactData("group 1", "group header", "group footer"));
+            createContact(new ContactData("First name", "Middle name", "Last name", "Nickname", "Photo",
+                    "Title", "Company", "Address", "Home", "Mobile", "Work", "Fax",
+                    "Email", "Email2", "Email3", "Homepage", "Birthday", "Anniversary", "Group"));
         }
 
         @Test
