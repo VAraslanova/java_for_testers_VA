@@ -1,14 +1,12 @@
 import model.ContactData;
 import model.GroupData;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestBase {
+public class ApplicationManager {
     protected static WebDriver driver;
 
-    @BeforeEach
-    public void setUp() {
+    void init() {
         if (driver == null) {
             driver = new ChromeDriver();
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
@@ -42,7 +40,6 @@ public class TestBase {
     }
 
     protected void createContact(ContactData contact) {
-        driver.findElement(By.name("new")).click();
         driver.findElement(By.name("firstname")).click();
         driver.findElement(By.name("firstname")).sendKeys(contact.FirstName());
         driver.findElement(By.name("middlename")).click();
@@ -77,9 +74,6 @@ public class TestBase {
         driver.findElement(By.linkText("home page")).click();
     }
 
-    // Остановилась тут!!!
-
-
     protected void openGroupPage() {
         if (!isElementPresent(By.name("new"))) {
             driver.findElement(By.linkText("groups")).click();
@@ -96,7 +90,7 @@ public class TestBase {
         return !isElementPresent(By.name("selected[]"));
     }
 
-    protected boolean isGroupPresent() {
+    protected boolean isContactPresent() {
         return !isElementPresent(By.name("selected[]"));
     }
 
@@ -104,5 +98,11 @@ public class TestBase {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
+    }
+
+    protected void removeContact() {
+        driver.findElement(By.name("selected[]")).click();
+        driver.findElement(By.xpath("(//input[@value=\'Delete\'])")).click();
+        /*driver.findElement(By.linkText("home")).click();*/
     }
 }
