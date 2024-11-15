@@ -3,6 +3,8 @@ package manager;
 import model.GroupData;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 public class GroupHelper {
     private ApplicationManager manager;
 
@@ -12,6 +14,7 @@ public class GroupHelper {
 
     public void openGroupPage() {
         if (!manager.isElementPresent(By.name("new"))) {
+            manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
             manager.driver.findElement(By.linkText("groups")).click();
         }
     }

@@ -16,12 +16,18 @@ public class ContactHelper {
         }
     }
 
+    public void openHomePage() {
+        if (!manager.isElementPresent(By.name("new"))) {
+            manager.driver.findElement(By.linkText("home")).click();
+        }
+    }
+
     public boolean isContactPresent() {
         return !manager.isElementPresent(By.name("selected[]"));
     }
 
     public void removeContact() {
-        openContactPage();
+        openHomePage();
         manager.driver.findElement(By.name("selected[]")).click();
         manager.driver.findElement(By.xpath("(//input[@value=\'Delete\'])")).click();
         /*driver.findElement(By.linkText("home")).click();*/
