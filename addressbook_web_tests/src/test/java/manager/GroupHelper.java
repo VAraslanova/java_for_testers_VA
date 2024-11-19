@@ -19,10 +19,6 @@ public class GroupHelper {
         }
     }
 
-    public boolean isGroupPresent() {
-        return !manager.isElementPresent(By.name("selected[]"));
-    }
-
     public void createGroup(GroupData group) {
         openGroupPage();
         initGroupCreation();
@@ -34,7 +30,7 @@ public class GroupHelper {
     public void removeGroup() {
         openGroupPage();
         selectGroup();
-        removeSelectedGroup();
+        removeSelectedGroups();
         returnToGroupsPage();
     }
 
@@ -47,7 +43,7 @@ public class GroupHelper {
         returnToGroupsPage();
     }
 
-    private void removeSelectedGroup() {
+    private void removeSelectedGroups() {
         click(By.name("delete"));
     }
 
@@ -60,7 +56,13 @@ public class GroupHelper {
     }
 
     private void returnToGroupsPage() {
-        click(By.linkText("group page"));
+        manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        if (manager.isElementPresent(By.linkText("group page"))) {
+            click(By.linkText("group page"));
+        }
+        else {
+            click(By.linkText("groups"));
+        }
     }
 
     private void submitGroupModification() {
@@ -89,5 +91,23 @@ public class GroupHelper {
 
     private void click(By locator) {
         manager.driver.findElement(locator).click();
+    }
+
+    public int getCount() {
+        openGroupPage();
+        return manager.driver.findElements(By.name("selected[]")).size();
+    }
+
+    public void removeAllGroup() {
+        openGroupPage();
+        selectAllGroups();
+        removeSelectedGroups();
+    }
+
+    private void selectAllGroups() {
+        var checkboxes = manager.driver.findElements(By.name("selected[]"));
+        for (var checkbox : checkboxes){
+            checkbox.click();
+        }
     }
 }
