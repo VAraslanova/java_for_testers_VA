@@ -40,18 +40,18 @@ public class ContactHelper {
         type("firstname", contact.FirstName());
         type("middlename", contact.MiddleName());
         type("lastname", contact.LastName());
-        type("nickname", contact.Nickname());
-        type("title", contact.Title());
-        type("company", contact.Company());
-        type("address", contact.Address());
+        //type("nickname", contact.Nickname());
+        //type("title", contact.Title());
+        //type("company", contact.Company());
+        //type("address", contact.Address());
         type("home", contact.TelephoneHome());
         type("mobile", contact.TelephoneMobile());
-        type("work", contact.TelephoneWork());
-        type("fax", contact.TelephoneFax());
-        type("email", contact.Email());
-        type("email2", contact.Email2());
-        type("email3", contact.Email3());
-        type("homepage", contact.Homepage());
+        //type("work", contact.TelephoneWork());
+        //type("fax", contact.TelephoneFax());
+        //type("email", contact.Email());
+        //type("email2", contact.Email2());
+        //type("email3", contact.Email3());
+        //type("homepage", contact.Homepage());
         manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
         manager.driver.findElement(By.linkText("home page")).click();
     }
@@ -59,6 +59,11 @@ public class ContactHelper {
     private void type(String field, String contact) {
         manager.driver.findElement(By.name(field)).click();
         manager.driver.findElement(By.name(field)).sendKeys(contact);
+    }
+
+    public int getCount() {
+        openHomePage();
+        return manager.driver.findElements(By.name("selected[]")).size();
     }
 
 
