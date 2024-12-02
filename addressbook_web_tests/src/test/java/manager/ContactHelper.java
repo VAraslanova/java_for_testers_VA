@@ -30,9 +30,9 @@ public class ContactHelper {
         return !manager.isElementPresent(By.name("selected[]"));
     }
 
-    public void removeContact() {
+    public void removeContact(ContactData contact) {
         openHomePage();
-        selectContact();
+        selectContact(contact);
         click(By.xpath("(//input[@value=\'Delete\'])"));
     }
 
@@ -68,13 +68,41 @@ public class ContactHelper {
     }
 
 
-    private void selectContact() {
-        click(By.name("selected[]"));
+    private void selectContact(ContactData contact) {
+        click(By.cssSelector(String.format("input[value='%s']", contact.id())));
+        //click(By.name("selected[]"));
     }
 
     private void click(By locator) {
         manager.driver.findElement(locator).click();
     }
+
+    private void initContactModification(ContactData contact) {
+        click(By.xpath(String.format("//a[@href='edit.php?id=%s']/img", contact.id())));
+    }
+
+    private void fillContactForm(ContactData contact) {
+        type("firstname", contact.firstName());
+        type("middlename", contact.middleName());
+        type("lastname", contact.lastName());
+        type("home", contact.telephoneHome());
+        type("mobile", contact.telephoneMobile());
+    }
+
+    private void submitContactModification() {
+        click(By.name("update"));
+    }
+
+    private void returnToContactPage() {
+        manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        if (manager.isElementPresent(By.linkText("home page"))) {
+            click(By.linkText("home page"));
+        }
+        else {
+            click(By.linkText("home"));
+        }
+    }
+
 
     public ArrayList<ContactData> getList() {
         openHomePage();
@@ -91,4 +119,17 @@ public class ContactHelper {
         }
         return contacts;
     }
+
+    public void modifyContact(ContactData contact, ContactData modifiedContact) {
+        openHomePage();
+        selectContact(contact);
+        initContactModification(contact);
+        fillContactForm(modifiedContact);
+        submitContactModification();
+        returnToContactPage();
+    }
+
+
+
+
 }

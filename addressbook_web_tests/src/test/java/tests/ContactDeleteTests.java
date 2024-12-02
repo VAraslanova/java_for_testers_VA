@@ -4,6 +4,8 @@ import model.ContactData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 public class ContactDeleteTests extends TestBase {
 
     @Test //в приложении ошибка: контакты не удаляются, проверяем, что список не меняется
@@ -16,7 +18,9 @@ public class ContactDeleteTests extends TestBase {
                     ));
         }
         var oldGroups = app.contacts().getList();
-        app.contacts().removeContact();
+        var rnd = new Random();
+        var index = rnd.nextInt(oldGroups.size());
+        app.contacts().removeContact(oldGroups.get(index));
         var newGroups = app.contacts().getList();
         Assertions.assertEquals(oldGroups, newGroups);
     }

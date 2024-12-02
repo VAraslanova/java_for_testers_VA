@@ -24,12 +24,11 @@ public class GroupModificationTests extends TestBase{
         var newGroups = app.groups().getList();
         var expectedList = new ArrayList<>(oldGroups);
         expectedList.set(index, testData.withId(oldGroups.get(index).id()));
-        Comparator<GroupData> comareById = (o1, o2) -> {
+        Comparator<GroupData> compareById = (o1, o2) -> {
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
-        newGroups.sort(comareById);
-        expectedList.sort(comareById);
+        newGroups.sort(compareById);
+        expectedList.sort(compareById);
         Assertions.assertEquals(newGroups, expectedList);
-
     }
 }
