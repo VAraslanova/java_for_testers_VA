@@ -3,6 +3,7 @@ package manager;
 import model.ContactData;
 import org.openqa.selenium.By;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 
@@ -41,6 +42,9 @@ public class ContactHelper {
         type("firstname", contact.firstName());
         type("middlename", contact.middleName());
         type("lastname", contact.lastName());
+        if (contact.Photo() != "") {
+            attach("photo", contact.Photo());
+        }
         //type("nickname", contact.Nickname());
         //type("title", contact.Title());
         //type("company", contact.Company());
@@ -54,12 +58,17 @@ public class ContactHelper {
         //type("email3", contact.Email3());
         //type("homepage", contact.Homepage());
         manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
-        manager.driver.findElement(By.linkText("home page")).click();
+        //manager.driver.findElement(By.linkText("home page")).click();
+        returnToContactPage();
     }
 
-    private void type(String field, String contact) {
+    private void type(String field, String text) {
         manager.driver.findElement(By.name(field)).click();
-        manager.driver.findElement(By.name(field)).sendKeys(contact);
+        manager.driver.findElement(By.name(field)).sendKeys(text);
+    }
+
+    private void attach(String field, String file) {
+        manager.driver.findElement(By.name(field)).sendKeys(Paths.get(file).toAbsolutePath().toString());
     }
 
     public int getCount() {
