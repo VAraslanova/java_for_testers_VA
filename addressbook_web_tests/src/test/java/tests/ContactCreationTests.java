@@ -11,6 +11,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -58,6 +60,7 @@ public class ContactCreationTests extends TestBase {
 //                    .withTelephoneMobile(CommonFunctions.randomString(i)).withTelephoneHome(CommonFunctions.randomString(i)));
 //        }
 
+        var json = Files.readString(Paths.get("contacts.json"));
         ObjectMapper mapper = new ObjectMapper();
         var value = mapper.readValue(new File("contacts.json"), new TypeReference<List<ContactData>>(){});
         result.addAll(value);
