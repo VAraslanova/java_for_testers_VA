@@ -10,9 +10,9 @@ public class ApplicationManager {
     protected WebDriver driver;
     private LoginHelper session;
     private GroupHelper groups;
-
     private ContactHelper contacts;
-
+    private JdbcHelper jdbc;
+    private HibernateHelper hpm;
     private Properties properties;
 
     public void init(String browser, Properties properties) {
@@ -33,25 +33,39 @@ public class ApplicationManager {
     }
 
 
-    public LoginHelper session(){
+    public LoginHelper session() {
         if (session == null){
             session = new LoginHelper(this);
         }
         return session;
     }
 
-    public GroupHelper groups(){
+    public GroupHelper groups() {
         if (groups == null){
             groups = new GroupHelper(this);
         }
         return groups;
     }
 
-    public ContactHelper contacts(){
+    public ContactHelper contacts() {
         if (contacts == null){
             contacts = new ContactHelper(this);
         }
         return contacts;
+    }
+
+    public JdbcHelper jdbc() {
+        if (jdbc == null){
+            jdbc = new JdbcHelper(this);
+        }
+        return jdbc;
+    }
+
+    public HibernateHelper hpm() {
+        if (hpm == null){
+            hpm = new HibernateHelper(this);
+        }
+        return hpm;
     }
 
     public boolean isElementPresent(By locator) {
