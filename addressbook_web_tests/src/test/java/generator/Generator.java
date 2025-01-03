@@ -69,11 +69,10 @@ public class Generator {
                     .withFirstName(CommonFunctions.randomString(i * 10))
                     .withLastName(CommonFunctions.randomString(i * 10))
                     .withMiddleName("")
+                    .withAddress("")
                     .withTelephoneHome("")
                     .withTelephoneMobile("")
                     .withPhoto(CommonFunctions.randomFile("src/test/resources/images")));
-            //C:\Users\Валерия\IdeaProjects\java_for_testers_VA\addressbook_web_tests
-            //C:\Users\�������\IdeaProjects\java_for_testers_VA addressbook_web_tests
         }
         return result;
     }
@@ -86,11 +85,11 @@ public class Generator {
             try (var writer = new FileWriter(output)) {
                 writer.write(json);
             }
-        } if ("yaml".equals(format)) {
+        } else if ("yaml".equals(format)) {
             var mapper = new YAMLMapper();
             mapper.writeValue(new File(output), data);
 
-        } if ("xml".equals(format)) {
+        } else if ("xml".equals(format)) {
             var mapper = new XmlMapper();
             mapper.writeValue(new File(output), data);
 

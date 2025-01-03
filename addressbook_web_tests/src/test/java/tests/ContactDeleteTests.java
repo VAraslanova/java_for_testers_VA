@@ -13,16 +13,16 @@ public class ContactDeleteTests extends TestBase {
     public void canDeleteContact() {
         if (app.contacts().isContactPresent()) {
             app.contacts().createContact(new ContactData("", "First name", "Middle name", "Last name", "",//"Nickname", "Photo",
-                    //"Title", "Company", "Address",
-                    "Home", "Mobile"//, "Work", "Fax",
+                    //"Title", "Company",
+                    "Address","Home", "Mobile"//, "Work", "Fax",
                     //"Email", "Email2", "Email3", "Homepage", "Birthday", "Anniversary", "Group"
                     ));
         }
-        var oldContacts = app.contacts().getList();
+        var oldContacts = app.hbm().getContactList();
         var rnd = new Random();
         var index = rnd.nextInt(oldContacts.size());
         app.contacts().removeContact(oldContacts.get(index));
-        var newGroups = app.contacts().getList();
+        var newGroups = app.hbm().getContactList();
         var expectedList = new ArrayList<>(oldContacts);
         expectedList.remove(index);
         Assertions.assertEquals(newGroups, expectedList);

@@ -1,7 +1,9 @@
 package manager;
 
 import model.ContactData;
+import model.GroupData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 import java.nio.file.Paths;
 import java.time.Duration;
@@ -39,31 +41,29 @@ public class ContactHelper {
 
     public void createContact(ContactData contact) {
         openContactPage();
-        type("firstname", contact.firstName());
-        type("middlename", contact.middleName());
-        type("lastname", contact.lastName());
-        if (contact.Photo() != "") {
-            attach("photo", contact.Photo());
-        }
-        //type("nickname", contact.Nickname());
-        //type("title", contact.Title());
-        //type("company", contact.Company());
-        //type("address", contact.Address());
-        type("home", contact.telephoneHome());
-        type("mobile", contact.telephoneMobile());
-        //type("work", contact.TelephoneWork());
-        //type("fax", contact.TelephoneFax());
-        //type("email", contact.Email());
-        //type("email2", contact.Email2());
-        //type("email3", contact.Email3());
-        //type("homepage", contact.Homepage());
-        manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
-        //manager.driver.findElement(By.linkText("home page")).click();
+        fillContactForm(contact);
+        submitContactCreation();
         returnToContactPage();
     }
 
+    public void createContact(ContactData contact, GroupData group) {
+        openContactPage();
+        fillContactForm(contact);
+        selectGroup(group);
+        submitContactCreation();
+        returnToContactPage();
+    }
+
+    private void selectGroup(GroupData group) {
+        new Select(manager.driver.findElement(By.name("new_group"))).selectByValue(group.id());
+    }
+
+    private void submitContactCreation() {
+        manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
+    }
+
     private void type(String field, String text) {
-        manager.driver.findElement(By.name(field)).click();
+        manager.driver.findElement(By.name(field)).clear();
         manager.driver.findElement(By.name(field)).sendKeys(text);
     }
 
@@ -94,6 +94,10 @@ public class ContactHelper {
         type("firstname", contact.firstName());
         type("middlename", contact.middleName());
         type("lastname", contact.lastName());
+        if (contact.Photo() != "") {
+            attach("photo", contact.Photo());
+        }
+        type("address", contact.address());
         type("home", contact.telephoneHome());
         type("mobile", contact.telephoneMobile());
     }

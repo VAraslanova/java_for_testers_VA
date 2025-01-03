@@ -12,7 +12,7 @@ public class ApplicationManager {
     private GroupHelper groups;
     private ContactHelper contacts;
     private JdbcHelper jdbc;
-    private HibernateHelper hpm;
+    private HibernateHelper hbm;
     private Properties properties;
 
     public void init(String browser, Properties properties) {
@@ -61,11 +61,11 @@ public class ApplicationManager {
         return jdbc;
     }
 
-    public HibernateHelper hpm() {
-        if (hpm == null){
-            hpm = new HibernateHelper(this);
+    public HibernateHelper hbm() {
+        if (hbm == null){
+            hbm = new HibernateHelper(this);
         }
-        return hpm;
+        return hbm;
     }
 
     public boolean isElementPresent(By locator) {
