@@ -58,6 +58,10 @@ public class ContactHelper {
         new Select(manager.driver.findElement(By.name("new_group"))).selectByValue(group.id());
     }
 
+    public void selectGroupMenu(GroupData group) {
+        new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
+    }
+
     private void submitContactCreation() {
         manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
     }
@@ -143,6 +147,10 @@ public class ContactHelper {
     }
 
 
-
-
+    public void removeContactFromGroup(ContactData contact, GroupData group) {
+        openHomePage();
+        selectGroupMenu(group);
+        selectContact(contact);
+        click(By.name("remove"));
+    }
 }
