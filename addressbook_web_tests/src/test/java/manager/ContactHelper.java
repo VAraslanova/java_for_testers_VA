@@ -3,11 +3,15 @@ package manager;
 import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ContactHelper {
     private ApplicationManager manager;
@@ -102,8 +106,8 @@ public class ContactHelper {
             attach("photo", contact.Photo());
         }
         type("address", contact.address());
-        type("home", contact.telephoneHome());
-        type("mobile", contact.telephoneMobile());
+        type("home", contact.home());
+        type("mobile", contact.mobile());
     }
 
     private void submitContactModification() {
@@ -152,5 +156,21 @@ public class ContactHelper {
         selectGroupMenu(group);
         selectContact(contact);
         click(By.name("remove"));
+    }
+
+    public String getPhones(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../../td[6]", contact.id()))).getText();
+    }
+
+    public Map<String, String> getPhones() {
+        var result = new HashMap<String, String>();
+        List<WebElement> rows= manager.driver.findElements(By.name("entry"));
+        for (WebElement row : rows) {
+            var id = row.findElement(By.tagName("input")).getAttribute("id");
+            var phones = row.findElements(By.tagName("td")).get(5).getText();
+            result.put(id, phones);
+        }
+        return result;
     }
 }

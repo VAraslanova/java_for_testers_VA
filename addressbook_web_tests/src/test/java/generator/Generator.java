@@ -13,7 +13,9 @@ import model.GroupData;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Generator {
     @Parameter(names={"--type", "-t"})
@@ -50,7 +52,24 @@ public class Generator {
         }
     }
 
+    private Object generateData(Supplier<Object> dataSupplier) {
+       return Stream.generate(dataSupplier).limit(count).collect(Collectors.toList());
+       /* //Альтернатива функциональной строчке
+        var result = new ArrayList<Object>();
+        for (int i = 0; i < count; i++) {
+            result.add(dataSupplier.get());
+        }
+        return result;
+        */
+    }
+
     private Object generateGroups() {
+        return generateData(() -> new GroupData()
+                            .withName(CommonFunctions.randomString(10))
+                            .withHeader(CommonFunctions.randomString(10))
+                            .withFooter(CommonFunctions.randomString(10)));
+
+/*
         var result = new ArrayList<GroupData>();
 
         for (int i = 0; i < count; i++){
@@ -60,9 +79,19 @@ public class Generator {
                     .withFooter(CommonFunctions.randomString(i * 10)));
         }
         return result;
+ */
     }
 
     private Object generateContacts() {
+        return generateData(() -> new ContactData()
+                .withFirstName(CommonFunctions.randomString(10))
+                .withLastName(CommonFunctions.randomString(10))
+                .withMiddleName("")
+                .withAddress("")
+                .withHome("")
+                .withMobile("")
+                .withPhoto(CommonFunctions.randomFile("src/test/resources/images")));
+        /*
         var result = new ArrayList<ContactData>();
         for (int i = 0; i < count; i++){
             result.add(new ContactData()
@@ -75,7 +104,10 @@ public class Generator {
                     .withPhoto(CommonFunctions.randomFile("src/test/resources/images")));
         }
         return result;
+         */
     }
+
+
     private void save(Object data) throws IOException {
         if ("json".equals(format)){
             ObjectMapper mapper = new ObjectMapper();

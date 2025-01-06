@@ -2,10 +2,11 @@ package manager;
 
 import model.GroupData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GroupHelper {
     private ApplicationManager manager;
@@ -107,16 +108,28 @@ public class GroupHelper {
     }
 
     private void selectAllGroups() {
-        var checkboxes = manager.driver.findElements(By.name("selected[]"));
+        /*var checkboxes = manager.driver.findElements(By.name("selected[]"));
         for (var checkbox : checkboxes){
             checkbox.click();
-        }
+        }*/
+        manager.driver
+                .findElements(By.name("selected[]"))
+                .forEach(WebElement::click);
     }
 
     public List<GroupData> getList() {
         openGroupPage();
-        var groups = new ArrayList<GroupData>();
+        //var groups = new ArrayList<GroupData>();
         var spans = manager.driver.findElements(By.cssSelector("span.group"));
+        return spans.stream()
+                .map(span -> {
+                    var name = span.getText();
+                    var checkbox = span.findElement(By.name("selected[]"));
+                    var id = checkbox.getAttribute("value");
+                    return new GroupData().withId(id).withName(name);
+                })
+                .collect(Collectors.toList());
+        /*
         for (var span : spans) {
             var name = span.getText();
             var checkbox = span.findElement(By.name("selected[]"));
@@ -124,5 +137,7 @@ public class GroupHelper {
             groups.add(new GroupData().withId(id).withName(name));
         }
         return groups;
+
+         */
     }
 }
