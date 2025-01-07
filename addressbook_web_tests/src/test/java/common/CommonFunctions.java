@@ -25,11 +25,33 @@ public class CommonFunctions {
         return result;
     }
 
+    public static String randomNumber(int n){
+        var rnd = new Random();
+        return "" + rnd.nextInt(n);
+    }
+
     public static String randomFile(String dir) {
         System.out.println("Current working directory: " + System.getProperty("user.dir"));
         var fileNames = new File(dir).list();
         var rnd = new Random();
         var index = rnd.nextInt(fileNames.length);
         return Paths.get(dir, fileNames[index]).toString();
+    }
+
+    public static String randomEmail(int n){
+        var rnd = new Random();
+        Supplier<Integer> randomNumbers = () -> rnd.nextInt(26);
+        var result = Stream.generate(randomNumbers)
+                .limit(n)
+                .map(i -> 'a' + i)
+                .map(Character::toString)
+                .collect(Collectors.joining());
+        /*
+        var result = "";
+        for (int i = 0; i < n; i++){
+            result = result + (char)('a' + rnd.nextInt(26));
+        }
+        */
+        return result;
     }
 }

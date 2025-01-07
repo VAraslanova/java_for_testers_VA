@@ -112,6 +112,10 @@ public class ContactHelper {
         type("address", contact.address());
         type("home", contact.home());
         type("mobile", contact.mobile());
+        type("work", contact.work());
+        type("email", contact.email());
+        type("email2", contact.email2());
+        type("email3", contact.email3());
     }
 
     private void submitContactModification() {
@@ -164,6 +168,16 @@ public class ContactHelper {
         selectGroupMenu(group);
         selectContact(contact);
         click(By.name("remove"));
+    }
+
+    public String getAddress(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../../td[4]", contact.id()))).getText();
+    }
+
+    public String getEmails(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../../td[5]", contact.id()))).getText();
     }
 
     public String getPhones(ContactData contact) {
