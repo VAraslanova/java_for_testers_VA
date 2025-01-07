@@ -66,6 +66,10 @@ public class ContactHelper {
         new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
     }
 
+    public void selectGroupInHome(GroupData group) {
+        new Select(manager.driver.findElement(By.name("to_group"))).selectByValue(group.id());
+    }
+
     private void submitContactCreation() {
         manager.driver.findElement(By.xpath("(//input[@name=\'submit\'])[2]")).click();
     }
@@ -131,10 +135,8 @@ public class ContactHelper {
         var lines = manager.driver.findElements(By.name("entry"));
         for (var line : lines) {
             var checkbox = line.findElement(By.name("selected[]"));
-            var firstLastName = checkbox.getAttribute("title");
-            var space = firstLastName.lastIndexOf(" ");
-            var firstName = firstLastName.substring(8, space);
-            var lastName = firstLastName.substring(space + 1, firstLastName.length() - 1);
+            var firstName = line.findElements(By.tagName("td")).get(1).getText();
+            var lastName = line.findElements(By.tagName("td")).get(2).getText();
             var id = checkbox.getAttribute("id");
             contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName));
         }
@@ -150,6 +152,12 @@ public class ContactHelper {
         returnToContactPage();
     }
 
+    public void addContactToGroup(ContactData contact, GroupData group) {
+        openHomePage();
+        selectContact(contact);
+        selectGroupInHome(group);
+        click(By.name("add"));
+    }
 
     public void removeContactFromGroup(ContactData contact, GroupData group) {
         openHomePage();
