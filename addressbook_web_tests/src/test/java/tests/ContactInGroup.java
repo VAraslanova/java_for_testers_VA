@@ -34,11 +34,11 @@ public class ContactInGroup extends TestBase{
         int groupIndex = 0;
         var group = groups.get(groupIndex);
 
-        List<ContactData> contacts = new ArrayList<ContactData>(app.contacts().getList());
-        List<ContactData> difference = contacts;
+        List<ContactData> contacts = app.hbm().getContactList();
+        //new ArrayList<ContactData>(app.contacts().getList());
 
         while (groupIndex < groups.size()) {
-            difference = contacts;
+            var difference = new ArrayList<>(contacts);
             difference.removeAll(app.hbm().getContactsInGroup(groups.get(groupIndex)));
             if (!difference.isEmpty()) {
                 contact = difference.get(0);
@@ -54,8 +54,13 @@ public class ContactInGroup extends TestBase{
                     .withLastName(CommonFunctions.randomString(10))
                     .withPhoto(CommonFunctions.randomFile("src/test/resources/images"));
             app.contacts().createContact(contact);
+            contacts = app.hbm().getContactList();
+            var maxId = contacts.get(contacts.size() - 1).id();
+            contact = contact.withId(maxId);
             group = groups.get(0);
         }
+
+
 
         // получить контакты в группе
         var oldRelated = app.hbm().getContactsInGroup(group);
@@ -65,7 +70,7 @@ public class ContactInGroup extends TestBase{
         var newRelated = app.hbm().getContactsInGroup(group);
         //создать ожидаемый список с добавленным в нем контактом
         var expectedList = new ArrayList<>(oldRelated);
-        expectedList.add(contact);
+        expectedList.add(contact.withPhoto(""));
         //сравнить
         Assertions.assertEquals(newRelated, expectedList);
     }

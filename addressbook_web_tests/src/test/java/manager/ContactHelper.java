@@ -135,8 +135,8 @@ public class ContactHelper {
         var lines = manager.driver.findElements(By.name("entry"));
         for (var line : lines) {
             var checkbox = line.findElement(By.name("selected[]"));
-            var firstName = line.findElements(By.tagName("td")).get(1).getText();
-            var lastName = line.findElements(By.tagName("td")).get(2).getText();
+            var firstName = line.findElements(By.tagName("td")).get(2).getText();
+            var lastName = line.findElements(By.tagName("td")).get(1).getText();
             var id = checkbox.getAttribute("id");
             contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName));
         }

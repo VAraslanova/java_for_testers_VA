@@ -1,28 +1,31 @@
 [ {
   "id" : "",
-  "firstName" : "",
+  "firstName" : "lazzsiejpr",
   "middleName" : "",
-  "lastName" : "",
+  "lastName" : "ytjcjhwkde",
   "Photo" : "src\\test\\resources\\images\\avatar.jpg",
   "address" : "",
-  "telephoneHome" : "",
-  "telephoneMobile" : ""
+  "home" : "",
+  "mobile" : "",
+  "work" : ""
 }, {
   "id" : "",
-  "firstName" : "clcrhaafzg",
+  "firstName" : "zfbbgzwxfh",
   "middleName" : "",
-  "lastName" : "ywbnhocfsm",
+  "lastName" : "ahpiadzcvs",
   "Photo" : "src\\test\\resources\\images\\avatar.jpg",
   "address" : "",
-  "telephoneHome" : "",
-  "telephoneMobile" : ""
+  "home" : "",
+  "mobile" : "",
+  "work" : ""
 }, {
   "id" : "",
-  "firstName" : "vnuhvokrwkfvkwhmwwpy",
+  "firstName" : "kssqgeprgp",
   "middleName" : "",
-  "lastName" : "bxkemwkfckheiimypxgb",
+  "lastName" : "sbajtwrzjt",
   "Photo" : "src\\test\\resources\\images\\avatar.jpg",
   "address" : "",
-  "telephoneHome" : "",
-  "telephoneMobile" : ""
+  "home" : "",
+  "mobile" : "",
+  "work" : ""
 } ]
