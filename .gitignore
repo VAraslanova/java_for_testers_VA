@@ -1,6 +1,12 @@
 .gradle
 **/build/
 !src/**/build/
+**/wrapper
+**/workers
+**/native
+**/jdks
+**/caches
+**/daemon
 
 # Ignore Gradle GUI config
 gradle-app.setting
