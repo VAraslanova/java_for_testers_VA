@@ -1,12 +1,13 @@
 .gradle
 **/build/
 !src/**/build/
-**/wrapper
+**/.tmp
 **/workers
 **/native
 **/jdks
 **/caches
 **/daemon
+**/wrapper/gradle-7.4-bin.zip
 
 # Ignore Gradle GUI config
 gradle-app.setting
