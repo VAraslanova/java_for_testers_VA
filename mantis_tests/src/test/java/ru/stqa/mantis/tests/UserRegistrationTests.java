@@ -48,9 +48,10 @@ public class UserRegistrationTests extends TestBase{
         if (matcher.find()) {
             url = text.substring(matcher.start(), matcher.end());
         }
+        System.out.println(url);
 
         //проходим по ссылке и завершаем регистрацию пользователя (браузер)
-        app.browser().openURL(url);
+        app.browser().confirmationRegistration(url, username);
 
         //проверяем, что пользователь может залогиниться (HttpSessionHelper)
         app.http().login(username, "password");

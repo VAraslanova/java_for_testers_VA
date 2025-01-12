@@ -18,8 +18,13 @@ public class BrowserHelper extends HelperBase{
         type(By.name("username"), username);
         type(By.name("email"), String.format("%s@localhost", username));
         click(By.xpath("//input[@value='Signup']"));
-        //<a class="width-40 btn btn-inverse bigger-110 btn-success" href="login_page.php">
-        //									Proceed								</a>
     }
 
+    public void confirmationRegistration(String url, String username) {
+        openURL(url);
+        type(By.name("realname"), username);
+        type(By.name("password"), "password");
+        type(By.name("password_confirm"), "password");
+        click(By.xpath("//span[text()='Update User']"));
+    }
 }
