@@ -20,11 +20,11 @@ public class BrowserHelper extends HelperBase{
         click(By.xpath("//input[@value='Signup']"));
     }
 
-    public void confirmationRegistration(String url, String username) {
+    public void confirmationRegistration(String url, String username, String password) {
         openURL(url);
         type(By.name("realname"), username);
-        type(By.name("password"), "password");
-        type(By.name("password_confirm"), "password");
+        type(By.name("password"), password);
+        type(By.name("password_confirm"), password);
         click(By.xpath("//span[text()='Update User']"));
     }
 }

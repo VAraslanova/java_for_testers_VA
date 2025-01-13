@@ -28,17 +28,18 @@ public class UserRegistrationTests extends TestBase{
     @ParameterizedTest
     @MethodSource ("randomUsers")
     void canRegisterUser(String username) {
-
+        var password = "password";
         var email = String.format("%s@localhost", username);
         //создать пользователя на почтовом сервере (JamesHelper)
-        app.jamesCli().addUser(email, "password");
+        //app.jamesCli().addUser(email, password);
+        app.jamesApi().addUser(email, password);
 
         //в браузере заполнить форму создания и отправить (браузер)
         app.http().login("administrator", "root");
         app.browser().registrationUser(username);
 
         //получаем почту (MailHelper)
-        var messages = app.mail().receive(email, "password", Duration.ofSeconds(10));
+        var messages = app.mail().receive(email, password, Duration.ofSeconds(10));
 
         //извлекаем ссылку из письма
         var text = messages.get(0).content();
@@ -51,10 +52,10 @@ public class UserRegistrationTests extends TestBase{
         System.out.println(url);
 
         //проходим по ссылке и завершаем регистрацию пользователя (браузер)
-        app.browser().confirmationRegistration(url, username);
+        app.browser().confirmationRegistration(url, username, password);
 
         //проверяем, что пользователь может залогиниться (HttpSessionHelper)
-        app.http().login(username, "password");
+        app.http().login(username, password);
         Assertions.assertTrue(app.http().isLoggedIn());
     }
 }
