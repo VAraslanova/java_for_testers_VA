@@ -26,8 +26,20 @@ public class ContactCreationTests extends TestBase {
                 .withFirstName(CommonFunctions.randomString(10))
                 .withLastName(CommonFunctions.randomString(10))
                 .withPhoto(CommonFunctions.randomFile("src/test/resources/images"));
-            app.contacts().createContact(contact);
-        }
+        var oldContacts = app.hbm().getContactList();
+        app.contacts().createContact(contact);
+        var newContacts = app.hbm().getContactList();
+        Comparator<ContactData> compareById = (o1, o2) -> {
+            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+        };
+        newContacts.sort(compareById);
+        var maxId = newContacts.get(newContacts.size() - 1).id();
+
+        var expectedList = new ArrayList<>(oldContacts);
+        expectedList.add(contact.withId(maxId).withPhoto(""));//.withMiddleName("").withTelephoneHome("").withTelephoneMobile("").withPhoto(""));
+        expectedList.sort(compareById);
+        Assertions.assertEquals(expectedList, newContacts);
+    }
 
     @Test
     public void canCreateContactInGroup() {
@@ -55,7 +67,21 @@ public class ContactCreationTests extends TestBase {
 
         @Test
         public void canCreateContactWithEmptyName() {
-            app.contacts().createContact(new ContactData());
+            var oldContacts = app.hbm().getContactList();
+            var contact = new ContactData();
+            app.contacts().createContact(contact);
+            var newContacts = app.hbm().getContactList();
+            Comparator<ContactData> compareById = (o1, o2) -> {
+                return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+            };
+            newContacts.sort(compareById);
+            var maxId = newContacts.get(newContacts.size() - 1).id();
+
+            var expectedList = new ArrayList<>(oldContacts);
+            expectedList.add(contact.withId(maxId).withPhoto(""));//.withMiddleName("").withTelephoneHome("").withTelephoneMobile("").withPhoto(""));
+            expectedList.sort(compareById);
+            Assertions.assertEquals(expectedList, newContacts);
+
         }
 
         @Test

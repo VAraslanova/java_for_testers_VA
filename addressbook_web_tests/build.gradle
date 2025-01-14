@@ -9,6 +9,16 @@ repositories {
     mavenCentral()
 }
 
+def allureVersion = '2.29.0'
+def aspectJVersion = '1.9.22'
+
+configurations {
+    agent {
+        canBeResolved = true
+        canBeConsumed = true
+    }
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -21,6 +31,11 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:9.1.0'
     implementation 'org.hibernate.orm:hibernate-core:6.3.0.CR1'
 
+    agent "org.aspectj:aspectjweaver:$aspectJVersion"
+
+    testImplementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    testImplementation "io.qameta.allure:allure-junit5"
+
 }
 
 test {
@@ -32,4 +47,16 @@ test {
     if (project.hasProperty("target")){
         systemProperties("target", project.property("target"))
     }
+    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}" ]
+}
+
+tasks.test {
+    // Включение генерации отчетов в формате JUnit XML
+    reports {
+        junitXml.enabled = true    // Включение JUnit отчетов
+        //html.enabled = true       // Включение HTML отчетов (опционально)
+    }
+
+    // Указание директории для отчетов (по умолчанию: build/reports/tests)
+    //reports.junitXml.destination = file("$buildDir/test-results/junit")
 }

@@ -1,0 +1,25 @@
+0. Открыть командную строку из папки проекта:
+    \\..\java_for_testers_VA\addressbook_web_tests
+1. Убедиться, что версия java проекта совпадает с версией в JAVA_HOME:
+    echo %JAVA_HOME%
+2. Запуск всех тестов в командной строке:
+    gradlew test
+3. Запуск с читкой кэша от предыдущих тестов:
+    gradlew clean test
+4. Встроенный отчет gradle:
+    \\..\java_for_testers_VA\addressbook_web_tests\build\reports\tests\test\index.html
+
+
+
+5. Преобразование в allure отчет (нечитабельный):
+    C:\Tools\allure-2.32.0\bin\allure.bat generate
+    который лежит тут:
+    \\..\java_for_testers_VA\addressbook_web_tests\allure-report\index.html
+
+6. Преобразование в allure отчет (читабельный, удобно при разработке тестов):
+        C:\Tools\allure-2.32.0\bin\allure.bat serve
+        у меня сработало с указанием адреса и порта:
+        C:\Tools\allure-2.32.0\bin\allure.bat serve --host localhost --port 8080
+
+7. опубликовать отчет для всех: перенести в C:\xampp\htdocs папку allure-report с локальной машины, тогда можно его открыть по адресу:
+    localhost/allure-report

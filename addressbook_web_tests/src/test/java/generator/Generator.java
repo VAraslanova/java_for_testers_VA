@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Generator {
+    //programm arguments: --type contacts --output contacts.json --format json --count 3
+    //working directory: \\..\java_for_testers_VA\addressbook_web_tests
     @Parameter(names={"--type", "-t"})
     String type;
 
@@ -90,7 +92,10 @@ public class Generator {
                 .withAddress("")
                 .withHome("")
                 .withMobile("")
-                .withPhoto(CommonFunctions.randomFile("src/test/resources/images")));
+                .withPhoto(CommonFunctions.randomFile("src/test/resources/images"))
+                .withEmail("")
+                .withEmail2("")
+                .withEmail3(""));
         /*
         var result = new ArrayList<ContactData>();
         for (int i = 0; i < count; i++){

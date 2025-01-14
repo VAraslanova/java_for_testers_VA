@@ -13,4 +13,13 @@ public class IssueCreationTests extends TestBase {
                 .withDescription(CommonFunctions.randomString(50))
                 .withProject(1L));
     }
+
+    //https://mantisbt.org/bugs/api/soap/mantisconnect.php?wsdl
+    @Test
+    void canCreateIssueSoap() {
+        app.soap().createIssue(new IssueData()
+                .withSummary(CommonFunctions.randomString(10))
+                .withDescription(CommonFunctions.randomString(50))
+                .withProject(1L));
+    }
 }

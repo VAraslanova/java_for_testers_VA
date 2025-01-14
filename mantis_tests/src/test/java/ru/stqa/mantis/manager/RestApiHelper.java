@@ -20,7 +20,8 @@ public class RestApiHelper extends HelperBase {
         ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
         Authorization.setApiKey(manager.property("apiKey"));
 
-        //..\java_for_testers_VA\mantis_tests>gradlew generateSwaggerCode
+        // собираем папку io (там смотреть документацию по rest)
+        // ..\java_for_testers_VA\mantis_tests>gradlew generateSwaggerCode
     }
 
     public void createIssue(IssueData issueData) {
