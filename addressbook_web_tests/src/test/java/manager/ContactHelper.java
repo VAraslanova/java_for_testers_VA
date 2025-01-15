@@ -1,5 +1,6 @@
 package manager;
 
+import io.qameta.allure.Step;
 import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
@@ -43,6 +44,7 @@ public class ContactHelper {
         click(By.xpath("(//input[@value=\'Delete\'])"));
     }
 
+    @Step
     public void createContact(ContactData contact) {
         openContactPage();
         fillContactForm(contact);
@@ -156,6 +158,7 @@ public class ContactHelper {
         returnToContactPage();
     }
 
+    @Step
     public void addContactToGroup(ContactData contact, GroupData group) {
         openHomePage();
         selectContact(contact);
@@ -163,6 +166,7 @@ public class ContactHelper {
         click(By.name("add"));
     }
 
+    @Step
     public void removeContactFromGroup(ContactData contact, GroupData group) {
         openHomePage();
         selectGroupMenu(group);
@@ -170,21 +174,26 @@ public class ContactHelper {
         click(By.name("remove"));
     }
 
+    @Step
     public String getAddress(ContactData contact) {
+        manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[4]", contact.id()))).getText();
     }
 
+    @Step
     public String getEmails(ContactData contact) {
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[5]", contact.id()))).getText();
     }
 
+    @Step
     public String getPhones(ContactData contact) {
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[6]", contact.id()))).getText();
     }
 
+    @Step
     public Map<String, String> getPhones() {
         var result = new HashMap<String, String>();
         List<WebElement> rows= manager.driver.findElements(By.name("entry"));

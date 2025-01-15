@@ -23,3 +23,9 @@
 
 7. опубликовать отчет для всех: перенести в C:\xampp\htdocs папку allure-report с локальной машины, тогда можно его открыть по адресу:
     localhost/allure-report
+
+
+
+
+8. Запустить jenkins
+java -jar jenkins.war

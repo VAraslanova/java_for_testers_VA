@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4a45178-7c00-41fe-b884-896a131563a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/AdditionInfo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/manager/SoapApiHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/0fc7c649-b288-44d7-bda7-7a13cf6dd499-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/9a7d7eb5-6212-4969-9daa-396238853083-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c7149ab5-888f-42b4-94bb-2cfcdb75456f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/ci.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/contacts.json" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/contacts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/generator/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/HibernateHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/HibernateHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/GroupDeleteTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/GroupDeleteTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/manager/RestApiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/manager/RestApiHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/tests/IssueCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/tests/IssueCreationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/tests/UserRegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ru/stqa/mantis/tests/UserRegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/AdditionInfo" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/AdditionInfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInfoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInfoTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +100,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Валерия\IdeaProjects\java_for_testers_VA\addressbook_web_tests" />
       <recent name="C:\Users\Валерия\IdeaProjects\java_for_testers_VA\mantis_tests\src\test\java" />
       <recent name="C:\Users\Валерия\IdeaProjects\java_for_testers_VA\mantis_tests" />
     </key>
@@ -110,7 +109,7 @@
       <recent name="ru.stqa.mantis.common" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactModificationTests.canModificateContact">
+  <component name="RunManager" selected="Gradle.ContactInfoTests.testAddress">
     <configuration name="ContactInGroup.canAddContactToGroup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -235,11 +234,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ContactInfoTests.testAddress" />
         <item itemvalue="Gradle.ContactModificationTests.canModificateContact" />
         <item itemvalue="Gradle.ContactInGroup.canDeleteContactFromGroup" />
         <item itemvalue="Gradle.ContactInGroup.canAddContactToGroup" />
         <item itemvalue="Gradle.ContactInfoTests.testEmails" />
-        <item itemvalue="Gradle.ContactInfoTests.testAddress" />
       </list>
     </recent_temporary>
   </component>
