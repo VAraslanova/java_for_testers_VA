@@ -108,6 +108,7 @@ public class ContactInGroup extends TestBase{
         }
 
         group = groups.get(groupIndex);
+        app.contacts().openHomePage();
         app.contacts().selectGroupMenu(group);
         var oldRelated = app.hbm().getContactsInGroup(group);
         var rnd = new Random();
@@ -116,6 +117,9 @@ public class ContactInGroup extends TestBase{
         var newRelated = app.hbm().getContactsInGroup(group);
         var expectedList = new ArrayList<>(oldRelated);
         expectedList.remove(0);
+        app.contacts().openHomePage();
+        var group0 = new GroupData().withName("[all]");
+        app.contacts().selectGroupMenu(group0);
         Assertions.assertEquals(newRelated, expectedList);
     }
 }

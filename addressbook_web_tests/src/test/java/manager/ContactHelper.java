@@ -52,6 +52,7 @@ public class ContactHelper {
         returnToContactPage();
     }
 
+    @Step
     public void createContact(ContactData contact, GroupData group) {
         openContactPage();
         fillContactForm(contact);
@@ -60,12 +61,17 @@ public class ContactHelper {
         returnToContactPage();
     }
 
+    @Step
     private void selectGroup(GroupData group) {
         new Select(manager.driver.findElement(By.name("new_group"))).selectByValue(group.id());
     }
 
+    @Step
     public void selectGroupMenu(GroupData group) {
-        new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
+        //openHomePage();
+        //new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
+        new Select(manager.driver.findElement(By.name("group"))).selectByVisibleText(group.name());
+        //new Select(manager.driver.findElement(By.xpath("(//select[@name=\'group\'])"))).selectByValue(group.id());
     }
 
     public void selectGroupInHome(GroupData group) {
@@ -90,7 +96,7 @@ public class ContactHelper {
         return manager.driver.findElements(By.name("selected[]")).size();
     }
 
-
+    @Step
     private void selectContact(ContactData contact) {
         click(By.cssSelector(String.format("input[value='%s']", contact.id())));
         //click(By.name("selected[]"));
@@ -176,6 +182,7 @@ public class ContactHelper {
 
     @Step
     public String getAddress(ContactData contact) {
+        openHomePage();
         manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[4]", contact.id()))).getText();
@@ -183,18 +190,21 @@ public class ContactHelper {
 
     @Step
     public String getEmails(ContactData contact) {
+        openHomePage();
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[5]", contact.id()))).getText();
     }
 
     @Step
     public String getPhones(ContactData contact) {
+        openHomePage();
         return manager.driver.findElement(By.xpath(
                 String.format("//input[@id='%s']/../../td[6]", contact.id()))).getText();
     }
 
     @Step
     public Map<String, String> getPhones() {
+        openHomePage();
         var result = new HashMap<String, String>();
         List<WebElement> rows= manager.driver.findElements(By.name("entry"));
         for (WebElement row : rows) {
