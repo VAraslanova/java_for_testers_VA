@@ -5,20 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4a45178-7c00-41fe-b884-896a131563a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/0fc7c649-b288-44d7-bda7-7a13cf6dd499-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/9a7d7eb5-6212-4969-9daa-396238853083-result.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c7149ab5-888f-42b4-94bb-2cfcdb75456f-container.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/ci.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/jenkins/settings/Settings5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook_web_tests/AdditionInfo" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/AdditionInfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInfoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInfoTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/0504e314-29d5-4597-aa2b-dead10f9a94a-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/0a480b81-4284-491e-85db-2d8f395ef586-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/0fc7c649-b288-44d7-bda7-7a13cf6dd499-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/15187fc4-00d7-4154-9204-b47b604aa8d3-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/163f8320-ee5c-4eb9-8146-3fd1f4d5c1b1-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/2b60f6f6-69d0-428a-b211-fcebf06dc5e3-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/2f54e38a-635f-415a-abd0-fb2c61a0438f-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/33e9449f-06b9-4459-ba3c-29662f3896ac-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/39249b6c-0434-4cfb-b303-1dbec83a1e09-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/3b1c34b7-8d0c-41e3-b978-1b2d4f37e82e-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/3f00c0ec-dfb3-4937-946b-5c7af7b88e2a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/4014d13e-c318-48d7-8df6-e9a4c2696a34-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/450273cc-3ce8-4cf1-b6b0-fb44cb2611bc-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/47685885-e9c7-4b14-8305-ab897c4072d8-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/4ca4fde3-53b2-4213-a168-797b58c4b5fc-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/4cb10bad-ee7c-4289-9638-58cc9f9ea173-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/6e3c324d-116f-406e-8efe-abf492e57d17-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/777d5d23-c939-4587-a26b-ee501254ba81-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/8e86e098-03aa-4bd9-b51e-aed5c1cf61b0-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/90be5048-f50f-427a-9f7c-7b9f4278bb5f-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/9601a5c5-46c2-40f2-86a8-3ab03ce95f64-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/97a4d0f0-587c-4a12-989f-65387b10dd16-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/9a7d7eb5-6212-4969-9daa-396238853083-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/9f41954d-15e9-4dd2-ade0-7a9b9335341d-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/a9aad946-dca5-4200-8fb4-c56645cfd384-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/b1a5ac83-65d4-464c-9b2b-56f4b63c2bbe-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/b769c829-717d-48d3-a55f-3d2841f3c9a1-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/b783a5c3-13bd-457f-8a04-ee74c8a9a9cd-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/b856bc2a-aee9-46b6-8572-7fd3b76ea94d-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/b9fbfc71-3a06-4a0b-af71-80c6abe4bb8c-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c0620074-e336-401c-93dc-90ab15ba83fc-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c3aa77b9-0ac0-4662-9908-e0662c8ee8d4-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c7149ab5-888f-42b4-94bb-2cfcdb75456f-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/c8b8518f-d93f-460e-b07b-9f123fba460a-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/cb5b862b-17a0-411f-8321-b62b60b7f97d-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/cbf0d9e7-e355-4bb3-ab5e-c7b95b762e57-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/cccfa54a-7600-4051-bc2e-7425d53dd840-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/d17319a3-0a4d-4f21-9e25-f207b3e9d2e7-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/d752b15e-9d3a-44e4-8bcb-6ccfb752e117-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/db9c8e4b-7446-49b0-9753-b3aa4ad577e0-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/de218877-f492-432c-a6cf-0f8f773b470d-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/e02562a3-2173-4a42-a4c1-653a4838f0b2-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/e52e0c18-9480-4fa5-9acb-550814cf4015-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/f1990e1f-8e11-421b-a7c3-50cdb397dffb-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/f2ab3876-4b2f-48b4-a179-47ac74572a31-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/f90b9cc0-6872-402d-9b35-95b4f01e05e9-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/allure-results/fc60d9b2-3655-483e-a780-e9b48a5568c9-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/contacts.json" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/contacts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactInGroup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,30 +147,7 @@
       <recent name="ru.stqa.mantis.common" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactInfoTests.testAddress">
-    <configuration name="ContactInGroup.canAddContactToGroup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.ContactInGroup.canAddContactToGroup&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.GroupDeleteTests.canDeleteAllGroupsAtOnce">
     <configuration name="ContactInGroup.canDeleteContactFromGroup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -179,7 +194,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ContactInfoTests.testEmails" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ContactInfoTests.testAllPhones" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
@@ -192,7 +207,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.ContactInfoTests.testEmails&quot;" />
+            <option value="&quot;tests.ContactInfoTests.testAllPhones&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,20 +240,43 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="GroupDeleteTests.canDeleteAllGroupsAtOnce" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.GroupDeleteTests.canDeleteAllGroupsAtOnce&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Gradle.ContactInfoTests.testAllPhones" />
+      <item itemvalue="Gradle.GroupDeleteTests.canDeleteAllGroupsAtOnce" />
       <item itemvalue="Gradle.ContactInGroup.canDeleteContactFromGroup" />
       <item itemvalue="Gradle.ContactModificationTests.canModificateContact" />
-      <item itemvalue="Gradle.ContactInGroup.canAddContactToGroup" />
       <item itemvalue="Gradle.ContactInfoTests.testAddress" />
-      <item itemvalue="Gradle.ContactInfoTests.testEmails" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GroupDeleteTests.canDeleteAllGroupsAtOnce" />
         <item itemvalue="Gradle.ContactInfoTests.testAddress" />
+        <item itemvalue="Gradle.ContactInfoTests.testAllPhones" />
         <item itemvalue="Gradle.ContactModificationTests.canModificateContact" />
         <item itemvalue="Gradle.ContactInGroup.canDeleteContactFromGroup" />
-        <item itemvalue="Gradle.ContactInGroup.canAddContactToGroup" />
-        <item itemvalue="Gradle.ContactInfoTests.testEmails" />
       </list>
     </recent_temporary>
   </component>

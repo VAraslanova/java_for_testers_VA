@@ -16,6 +16,9 @@
     который лежит тут:
     \\..\java_for_testers_VA\addressbook_web_tests\allure-report\index.html
 
+    потом надо перенести папку allure-report в папку C:\xampp\htdocs
+    и открыть в браузере localhost/allure-report
+
 6. Преобразование в allure отчет (читабельный, удобно при разработке тестов):
         C:\Tools\allure-2.32.0\bin\allure.bat serve
         у меня сработало с указанием адреса и порта:

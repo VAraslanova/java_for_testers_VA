@@ -122,6 +122,7 @@ public class GroupHelper {
     public List<GroupData> getList() {
         openGroupPage();
         //var groups = new ArrayList<GroupData>();
+        manager.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         var spans = manager.driver.findElements(By.cssSelector("span.group"));
         return spans.stream()
                 .map(span -> {

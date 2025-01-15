@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -60,7 +61,9 @@ public class ContactInGroup extends TestBase{
             group = groups.get(0);
         }
 
-
+        Comparator<ContactData> compareById = (o1, o2) -> {
+            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+        };
 
         // получить контакты в группе
         var oldRelated = app.hbm().getContactsInGroup(group);
@@ -71,6 +74,8 @@ public class ContactInGroup extends TestBase{
         //создать ожидаемый список с добавленным в нем контактом
         var expectedList = new ArrayList<>(oldRelated);
         expectedList.add(contact.withPhoto(""));
+        newRelated.sort(compareById);
+        expectedList.sort(compareById);
         //сравнить
         Assertions.assertEquals(newRelated, expectedList);
     }
